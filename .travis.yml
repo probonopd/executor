@@ -28,8 +28,8 @@ script:
   - qmake -v
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-  - make -j$(nproc)
+  - cmake .. -DCMAKE_C_COMPILER=gcc-8 -DCMAKE_CXX_COMPILER=g++-8
+  - make
   - ctest . -LE xfail
   - make DESTDIR=appdir -j$(nproc) install ; find appdir/  
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
